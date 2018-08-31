@@ -1,0 +1,39 @@
+<br>
+<h1>Listado de politicas</h1>
+<hr>
+
+<div class="row">
+  <div class="col-md-12">
+    <input [(ngModel)]="filtroId" placeholder="Buscar por ID">
+    <p></p>
+    <div class="table-responsive">
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">AmountInsured</th>
+            <th scope="col">InceptionDate</th>
+            <th scope="col">InstallmentPayment</th>
+            <th scope="col">ClientId</th>
+            <th scope="col">Detalles</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let politica of politicas | grdFilter: {id:filtroId}">
+            <td>{{ politica.id }}</td>
+            <td>{{ politica.amountInsured }}</td>
+            <td>{{ politica.inceptionDate }}</td>
+            <td>{{ politica.installmentPayment }}</td>
+            <td>{{ politica.clientId }}</td>
+            <td>
+              <button [routerLink]="['/politica', politica.id ]" 
+                  type="button" class="btn btn-success">
+                  Ver
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

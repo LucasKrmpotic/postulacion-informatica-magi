@@ -1,0 +1,40 @@
+<br>
+<div *ngIf="isDataAvailable">
+  <div class="card">
+    <h3 class="card-header">Politica</h3>
+    <div class="card-body">
+      <h4 class="card-title">Monto asegurado {{ politica.amountInsured }}</h4>
+      <h6 class="card-subtitle mb-2 text-muted">
+        <span style="font-weight: bold">Inicio cobertura: </span>
+        {{ politica.inceptionDate }}
+      </h6>
+      <h6 class="card-subtitle mb-2 text-muted">
+        <span style="font-weight: bold">Id: </span>
+        {{ politica.id }}
+      </h6>
+      <p class="card-text">Información básica de la politica.</p>
+    </div>
+  </div>
+  <br>
+
+  <div *ngIf="isAdmin" class="card">
+      <h3 class="card-header">Cliente</h3>
+      <div class="card-body">
+        <h4 class="card-title">{{cliente.name }}</h4>
+        <h6 class="card-subtitle mb-2 text-muted">
+          <span style="font-weight: bold">Email: </span>
+          {{cliente.email }}
+        </h6>
+        <h6 class="card-subtitle mb-2 text-muted">
+          <span style="font-weight: bold">Rol: </span>
+          {{cliente.role }}
+        </h6>
+        <h6 class="card-subtitle mb-2 text-muted">
+          <span style="font-weight: bold">Id: </span>
+          {{cliente.id }}
+        </h6>
+        <p class="card-text">Información básica del cliente.</p>
+      </div>
+    </div>
+    
+</div>

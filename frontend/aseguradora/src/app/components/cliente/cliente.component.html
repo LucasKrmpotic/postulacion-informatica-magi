@@ -1,0 +1,61 @@
+<br>
+<div *ngIf="isDataAvailable">
+  <div class="card">
+    <h3 class="card-header">Cliente</h3>
+    <div class="card-body">
+      <h4 class="card-title">{{cliente.name }}</h4>
+      <h6 class="card-subtitle mb-2 text-muted">
+        <span style="font-weight: bold">Email: </span>
+        {{cliente.email }}
+      </h6>
+      <h6 class="card-subtitle mb-2 text-muted">
+        <span style="font-weight: bold">Rol: </span>
+        {{cliente.role }}
+      </h6>
+      <h6 class="card-subtitle mb-2 text-muted">
+        <span style="font-weight: bold">Id: </span>
+        {{cliente.id }}
+      </h6>
+      <p class="card-text">Información básica del cliente.</p>
+      <button *ngIf="isAdmin" (click)="verPoliticas()" type="button" class="btn btn-info">
+        ver políticas
+      </button>
+    </div>
+  </div>
+</div>
+<br>
+<div *ngIf="flagPoliticas">
+  <div class="row">
+    <div class="col-md-12">
+      <!-- <input [(ngModel)]="searchText" placeholder="Search.."> -->
+      <p></p>
+      <div class="table-responsive">
+
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">id</th>
+              <th scope="col">AmountInsured</th>
+              <th scope="col">Email</th>
+              <th scope="col">InceptionDate</th>
+              <th scope="col">InstallmentPayment</th>
+              <th scope="col">ClientId</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let politica of politicas; let i = index">
+              <td>{{ i + 1}}</td>
+              <td>{{ politica.id }}</td>
+              <td>{{ politica.amountInsured }}</td>
+              <td>{{ politica.email }}</td>
+              <td>{{ politica.inceptionDate }}</td>
+              <td>{{ politica.installmentPayment }}</td>
+              <td>{{ politica.clientId }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

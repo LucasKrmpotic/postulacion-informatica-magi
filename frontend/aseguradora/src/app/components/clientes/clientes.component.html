@@ -1,0 +1,40 @@
+<br>
+<h1>Listado de clientes</h1>
+<hr>
+<div class="row">
+  <div class="col-md-12">
+    <input [(ngModel)]="filtro" placeholder="Buscar por ID o nombre">
+    <p></p>
+    <div class="table-responsive">
+
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Role</th>
+            <th scope="col">Detalles</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cliente of clientes | grdFilter: {name: filtro, id:filtro}; let i = index">
+            <td>{{ i + 1}}</td>
+            <td>{{ cliente.id }}</td>
+            <td>{{ cliente.name }}</td>
+            <td>{{ cliente.email }}</td>
+            <td>{{ cliente.role }}</td>
+            <td>
+              <button 
+                  [routerLink]="['/cliente', cliente.id ]"
+                  type="button" class="btn btn-success">
+                  Ver
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

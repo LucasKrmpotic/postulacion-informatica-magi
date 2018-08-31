@@ -1,0 +1,30 @@
+{
+  "name": "aseguradoraapi",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon --exec babel-node ./app/app.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cookie-parser": "~1.4.3",
+    "cors": "^2.8.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.0",
+    "express-jwt": "^5.3.1",
+    "http-errors": "~1.6.2",
+    "jade": "^1.11.0",
+    "jsonwebtoken": "^8.3.0",
+    "morgan": "~1.9.0",
+    "request": "^2.88.0",
+    "rootpath": "^0.1.2",
+    "serve-favicon": "^2.5.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/node": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "nodemon": "^1.18.3"
+  }
+}
